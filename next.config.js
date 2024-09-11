@@ -4,7 +4,7 @@
 // module.exports = nextConfig
 
 // next.config.js
-module.exports = {
+const nextConfig = {
     reactStrictMode: true,
     exportPathMap: async function (
         defaultPathMap,
@@ -12,7 +12,9 @@ module.exports = {
     ) {
         return {
             '/': { page: '/' },
-            // добавьте другие страницы, если они есть
+            // Добавьте другие страницы, если они присутствуют
         }
     }
 }
+
+module.exports = nextConfig
