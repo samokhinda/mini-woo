@@ -52,14 +52,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     distDir: 'out',
-    exportPathMap: async function (
-      defaultPathMap,
-      { dev, dir, outDir, distDir, buildId }
-    ) {
-      return {
-        '/': { page: '/' },  // Это указывает на то, что страница '/' должна быть экспортирована как статическая.
-      };
-    },
   };
   
   module.exports = nextConfig;
