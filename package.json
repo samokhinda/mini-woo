@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",    
     "start": "next start",
     "lint": "next lint"
   },
@@ -25,3 +26,5 @@
     "typescript": "latest"
   }
 }
+
+
