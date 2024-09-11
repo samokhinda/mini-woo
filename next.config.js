@@ -34,24 +34,24 @@
   
 //   module.exports = nextConfig
 
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//     distDir: 'out',
-//     exportPathMap: async function (
-//       defaultPathMap,
-//       { dev, dir, outDir, distDir, buildId }
-//     ) {
-//       return {
-//         '/': { page: '/' },
-//       };
-//     },
-//   };
-  
-//   module.exports = nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: '/out',
-};
+    distDir: 'out',
+    exportPathMap: async function (
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+    ) {
+      return {
+        '/': { page: '/' },
+      };
+    },
+  };
+  
+  module.exports = nextConfig;
 
-module.exports = nextConfig;
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   distDir: '/out',
+// };
+
+// module.exports = nextConfig;
