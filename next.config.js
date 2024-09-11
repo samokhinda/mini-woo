@@ -4,17 +4,25 @@
 // module.exports = nextConfig
 
 // next.config.js
+// const nextConfig = {
+//     reactStrictMode: true,
+//     exportPathMap: async function (
+//         defaultPathMap,
+//         { dev, dir, outDir, distDir, buildId }
+//     ) {
+//         return {
+//             '/': { page: '/' },
+//             // Добавьте другие страницы, если они присутствуют
+//         }
+//     }
+// }
+
+// module.exports = nextConfig
+
+// next.config.js
 const nextConfig = {
     reactStrictMode: true,
-    exportPathMap: async function (
-        defaultPathMap,
-        { dev, dir, outDir, distDir, buildId }
-    ) {
-        return {
-            '/': { page: '/' },
-            // Добавьте другие страницы, если они присутствуют
-        }
-    }
+    // Удалено exportPathMap
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
