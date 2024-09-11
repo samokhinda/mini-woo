@@ -1,7 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {}
 
-module.exports = nextConfig
+// module.exports = nextConfig
 
 // next.config.js
 // const nextConfig = {
@@ -26,3 +26,10 @@ module.exports = nextConfig
 // }
 
 // module.exports = nextConfig;
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    distDir: 'out',
+  }
+  
+  module.exports = nextConfig
