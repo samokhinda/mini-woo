@@ -32,22 +32,19 @@ export default function Home() {
       const result = await res.json()
 
       if (invoiceSupported) {
-        // webApp?.openInvoice(result.invoice_link, function (status) {
-        //   webApp?.MainButton.hideProgress()
-        //   if (status == 'paid') {
-        //     console.log("[paid] InvoiceStatus " + result);
-        //     webApp?.close();
-        //   } else if (status == 'failed') {
-        //     console.log("[failed] InvoiceStatus " + result);
-        //     webApp?.HapticFeedback.notificationOccurred('error');
-        //   } else {
-        //     console.log("[unknown] InvoiceStatus" + result);
-        //     webApp?.HapticFeedback.notificationOccurred('warning');
-        //   }
-        // });
-        webApp?.MainButton.hideProgress();
-        webApp?.showAlert("Ваш заказ успешно размещен!");
-        webApp?.close();        
+        webApp?.openInvoice(result.invoice_link, function (status) {
+          webApp?.MainButton.hideProgress()
+          if (status == 'paid') {
+            console.log("[paid] InvoiceStatus " + result);
+            webApp?.close();
+          } else if (status == 'failed') {
+            console.log("[failed] InvoiceStatus " + result);
+            webApp?.HapticFeedback.notificationOccurred('error');
+          } else {
+            console.log("[unknown] InvoiceStatus" + result);
+            webApp?.HapticFeedback.notificationOccurred('warning');
+          }
+        });
       } else {
         webApp?.showAlert("Some features not available. Please update your telegram app!")
       }
