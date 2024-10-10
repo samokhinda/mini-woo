@@ -13,13 +13,13 @@ export default function StoreCategories() {
         <div style={state.selectedCategory?.id === category.id ? {backgroundColor: "var(--accent-color)"} : {}}
              key={category.id}
              onClick={() => dispatch({type: "select-cat", category: category})}
-        >{category.name}</div>
+        >{category.name} </div>
     )
 
     return (
-        <div className="store-categories">
+        <><div className="store-categories">
             {items}
-        </div>
+        </div><div>sdsd</div></>
     )
 }
 

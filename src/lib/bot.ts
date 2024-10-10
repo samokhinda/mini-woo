@@ -9,6 +9,7 @@ const WEBHOOK_URL = `${BASE_PATH}/api/telegram-hook?secret_hash=${SECRET_HASH}`
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!!
 const bot = new Telegraf(BOT_TOKEN)
 
+
 bot.start((ctx) => {
     ctx.reply(
         "Let's get started ;)",
