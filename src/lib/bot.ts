@@ -9,13 +9,23 @@ const WEBHOOK_URL = `${BASE_PATH}/api/telegram-hook?secret_hash=${SECRET_HASH}`
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!!
 const bot = new Telegraf(BOT_TOKEN)
 
-
 bot.start((ctx) => {
+    const botUsername = ctx.botInfo?.username; // Получим имя бота
+    console.log("Bot started by:", botUsername); // Выводим имя бота в консоль
+
+    const customUrl = `${BASE_PATH}?bot_id=${botUsername}`;
     ctx.reply(
         "Let's get started ;)",
-        Markup.inlineKeyboard([Markup.button.webApp("View Store", BASE_PATH)]),
-    )
+        Markup.inlineKeyboard([Markup.button.webApp("View Store", customUrl)]),
+    );
 });
+
+// bot.start((ctx) => {
+//     ctx.reply(
+//         "Let's get started ;)",
+//         Markup.inlineKeyboard([Markup.button.webApp("View Store", BASE_PATH)]),
+//     )
+// });
 bot.help((ctx) => ctx.reply("Test /start or /menu command!"))
 bot.command('menu', (ctx) =>
     ctx.setChatMenuButton({

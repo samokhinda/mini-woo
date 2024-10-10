@@ -17,9 +17,9 @@ export default function StoreCategories() {
     )
 
     return (
-        <><div className="store-categories">
+        <div className="store-categories">
             {items}
-        </div><div>sdsd</div></>
+        </div>
     )
 }
 
